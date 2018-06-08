@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright © 2017 example CopyRight and others. All rights reserved.
+Copyright © 2017 ZhangMaoLin and others. All rights reserved.
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License v1.0 which accompanies this distribution,
@@ -8,33 +8,37 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>org.opendaylight.controller</groupId>
     <artifactId>mdsal-it-parent</artifactId>
-    <version>1.7.2-SNAPSHOT</version>
+    <version>1.5.2-Carbon</version>
     <relativePath/>
   </parent>
 
-  <groupId>com.catt.example</groupId>
-  <artifactId>example-it</artifactId>
+  <groupId>com.catt.carbon</groupId>
+  <artifactId>demo-it</artifactId>
   <version>0.1.0-SNAPSHOT</version>
   <!-- <name> formatting is used by autorelease to parse and notify projects on
        build failure. Please do not modify this unless you have a good reason. -->
-  <name>ODL :: com.catt.example :: ${project.artifactId}</name>
+  <name>ODL :: com.catt.carbon :: ${project.artifactId}</name>
+  <packaging>bundle</packaging>
 
   <properties>
     <skipITs>false</skipITs>
+    <karaf.distro.groupId>com.catt.carbon</karaf.distro.groupId>
+    <karaf.distro.artifactId>demo-karaf</karaf.distro.artifactId>
+    <karaf.distro.version>0.1.0-SNAPSHOT</karaf.distro.version>
+    <karaf.distro.type>zip</karaf.distro.type>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>features-example</artifactId>
+      <artifactId>demo-features</artifactId>
       <version>${project.version}</version>
-      <type>xml</type>
-      <classifier>features</classifier>
     </dependency>
   </dependencies>
 </project>

@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright © 2017 example CopyRight and others. All rights reserved.
+Copyright © 2017 ZhangMaoLin and others. All rights reserved.
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License v1.0 which accompanies this distribution,
 and is available at http://www.eclipse.org/legal/epl-v10.html INTERNAL
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
-    <artifactId>karaf4-parent</artifactId>
-    <version>3.1.0</version>
-    <relativePath/>
+    <artifactId>karaf-parent</artifactId>
+    <version>1.8.2-Carbon</version>
   </parent>
 
-  <groupId>com.catt.example</groupId>
-  <artifactId>example-karaf</artifactId>
+  <groupId>com.catt.carbon</groupId>
+  <artifactId>demo-karaf</artifactId>
   <version>0.1.0-SNAPSHOT</version>
   <!-- <name> formatting is used by autorelease to parse and notify projects on
        build failure. Please do not modify this unless you have a good reason. -->
-  <name>ODL :: com.catt.example :: ${project.artifactId}</name>
+  <name>ODL :: com.catt.carbon :: ${project.artifactId}</name>
 
   <properties>
-    <karaf.localFeature>odl-example-rest</karaf.localFeature>
+    <karaf.localFeature>odl-demo-ui</karaf.localFeature>
   </properties>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>${project.groupId}</groupId>
-        <artifactId>example-artifacts</artifactId>
+        <artifactId>demo-artifacts</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
         <scope>import</scope>
@@ -50,7 +50,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html INTERNAL
 
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>features-example</artifactId>
+      <artifactId>demo-features</artifactId>
       <classifier>features</classifier>
       <type>xml</type>
       <scope>runtime</scope>

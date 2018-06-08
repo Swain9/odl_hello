@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright © 2017 example CopyRight and others. All rights reserved.
+Copyright © 2017 ZhangMaoLin and others. All rights reserved.
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License v1.0 which accompanies this distribution,
 and is available at http://www.eclipse.org/legal/epl-v10.html INTERNAL
@@ -11,21 +11,21 @@ and is available at http://www.eclipse.org/legal/epl-v10.html INTERNAL
   <parent>
     <groupId>org.opendaylight.odlparent</groupId>
     <artifactId>odlparent</artifactId>
-    <version>3.1.0</version>
+    <version>1.8.2-Carbon</version>
     <relativePath/>
   </parent>
 
-  <groupId>com.catt.example</groupId>
-  <artifactId>example-aggregator</artifactId>
+  <groupId>com.catt.carbon</groupId>
+  <artifactId>demo-aggregator</artifactId>
   <version>0.1.0-SNAPSHOT</version>
-  <name>example</name> <!-- DO NOT CHANGE - Used by Sonar to set project name -->
+  <name>demo</name> <!-- DO NOT CHANGE - Used by Sonar to set project name -->
   <packaging>pom</packaging>
 
   <scm>
-    <connection>scm:git:ssh://git.opendaylight.org:29418/example.git</connection>
-    <developerConnection>scm:git:ssh://git.opendaylight.org:29418/example.git</developerConnection>
+    <connection>scm:git:ssh://git.opendaylight.org:29418/demo.git</connection>
+    <developerConnection>scm:git:ssh://git.opendaylight.org:29418/demo.git</developerConnection>
     <tag>HEAD</tag>
-    <url>https://wiki.opendaylight.org/view/example:Main</url>
+    <url>https://wiki.opendaylight.org/view/demo:Main</url>
   </scm>
 
   <modules>
@@ -58,4 +58,59 @@ and is available at http://www.eclipse.org/legal/epl-v10.html INTERNAL
     </plugins>
   </build>
 
+  <profiles>
+    <profile>
+      <!--
+          This profile is to ensure we only build javadocs reports
+          when we plan to deploy Maven site for our project.
+      -->
+      <id>maven-site</id>
+      <activation>
+        <file>
+          <exists>${user.dir}/deploy-site.xml</exists>
+        </file>
+      </activation>
+
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <inherited>false</inherited>
+            <executions>
+              <execution>
+                <id>aggregate</id>
+                <goals>
+                  <goal>aggregate</goal>
+                </goals>
+                <phase>package</phase>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <configuration>
+              <failsOnError>true</failsOnError>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+  <!--
+      Maven Site Configuration
+
+      The following configuration is necessary for maven-site-plugin to
+      correctly identify the correct deployment path for OpenDaylight Maven
+      sites.
+  -->
+  <url>${odl.site.url}/${project.groupId}/${stream}/</url>
+
+  <distributionManagement>
+    <site>
+      <id>opendaylight-site</id>
+      <url>${nexus.site.url}/</url>
+    </site>
+  </distributionManagement>
 </project>
