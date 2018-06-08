@@ -7,11 +7,25 @@
  */
 package com.catt.carbon.impl;
 
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.SettableFuture;
 import org.opendaylight.controller.md.sal.binding.api.DataBroker;
+import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.demo.rev150105.DemoService;
+import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.demo.rev150105.HelloInput;
+import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.demo.rev150105.HelloOutput;
+import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.demo.rev150105.HelloOutputBuilder;
+import org.opendaylight.yangtools.yang.common.RpcResult;
+import org.opendaylight.yangtools.yang.common.RpcResultBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class DemoProvider {
+import java.util.concurrent.Future;
+
+/**
+ * DemoService是api模块中自动生成的接口类
+ * Demo是yang中定义的module demo
+ */
+public class DemoProvider implements DemoService {
 
     private static final Logger LOG = LoggerFactory.getLogger(DemoProvider.class);
 
@@ -33,5 +47,19 @@ public class DemoProvider {
      */
     public void close() {
         LOG.info("DemoProvider Closed");
+    }
+
+    /**
+     * @param input yang中定义的input输入参数
+     * @return yang中定义的output输出参数
+     */
+    @Override
+    public Future<RpcResult<HelloOutput>> hello(HelloInput input) {
+        /*String name = input.getName();
+
+        HelloOutputBuilder builder = new HelloOutputBuilder();
+
+        return Futures.immediateFuture(RpcResultBuilder.success(builder.build()))*/
+        return null;
     }
 }

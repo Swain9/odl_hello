@@ -6,4 +6,19 @@ module demo {
     revision "2015-01-05" {
         description "Initial revision of demo model";
     }
+
+    rpc hello {
+        input {
+            leaf name {
+                type string;
+                description "你的名字";
+            }
+        }
+        output {
+            leaf greeting {
+                type string;
+                description "打招呼";
+            }
+        }
+    }
 }
