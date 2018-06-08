@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright © 2017 zhangmaolin and others. All rights reserved.
+Copyright © 2017 example CopyRight and others. All rights reserved.
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License v1.0 which accompanies this distribution,
@@ -17,12 +17,12 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
     <relativePath/>
   </parent>
 
-  <groupId>org.opendaylight.hello</groupId>
-  <artifactId>hello-api</artifactId>
+  <groupId>com.catt.example</groupId>
+  <artifactId>example-api</artifactId>
   <version>0.1.0-SNAPSHOT</version>
   <!-- <name> formatting is used by autorelease to parse and notify projects on
        build failure. Please do not modify this unless you have a good reason. -->
-  <name>ODL :: org.opendaylight.hello :: ${project.artifactId}</name>
+  <name>ODL :: com.catt.example :: ${project.artifactId}</name>
   <packaging>bundle</packaging>
 
   <build>

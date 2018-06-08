@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- vi: set et smarttab sw=4 tabstop=4: -->
 <!--
-Copyright © 2017 zhangmaolin and others. All rights reserved.
+Copyright © 2017 example CopyRight and others. All rights reserved.
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License v1.0 which accompanies this distribution,
@@ -15,16 +15,16 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
     interface="org.opendaylight.controller.md.sal.binding.api.DataBroker"
     odl:type="default" />
 
-  <bean id="cliCommandsImpl" class="org.opendaylight.hello.cli.impl.HelloCliCommandsImpl">
+  <bean id="cliCommandsImpl" class="com.catt.example.cli.impl.ExampleCliCommandsImpl">
     <argument ref="dataBroker" />
   </bean>
 
   <service ref="cliCommandsImpl" odl:type="default"
-    interface="org.opendaylight.hello.cli.api.HelloCliCommands" />
+    interface="com.catt.example.cli.api.ExampleCliCommands" />
 
   <command-bundle xmlns="http://karaf.apache.org/xmlns/shell/v1.1.0">
     <command>
-        <action class="org.opendaylight.hello.cli.commands.HelloCliTestCommand">
+        <action class="com.catt.example.cli.commands.ExampleCliTestCommand">
             <argument ref="cliCommandsImpl"/>
         </action>
     </command>
