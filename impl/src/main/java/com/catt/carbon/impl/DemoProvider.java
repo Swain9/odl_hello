@@ -55,11 +55,20 @@ public class DemoProvider implements DemoService {
      */
     @Override
     public Future<RpcResult<HelloOutput>> hello(HelloInput input) {
-        /*String name = input.getName();
+        try {
+
+            //获取入参
+            String name = new String(input.getName().getBytes("GBK"), "UTF-8");
+            //实例化一个出参构建类
+            HelloOutputBuilder builder = new HelloOutputBuilder();
+            builder.setGreeting(name + "，你好呀");
+
+            return Futures.immediateFuture(RpcResultBuilder.success(builder).build());
+        } catch (Exception e) {
+            LOG.error("请求失败", e);
+        }
 
         HelloOutputBuilder builder = new HelloOutputBuilder();
-
-        return Futures.immediateFuture(RpcResultBuilder.success(builder.build()))*/
-        return null;
+        return Futures.immediateFuture(RpcResultBuilder.success(builder).build());
     }
 }
