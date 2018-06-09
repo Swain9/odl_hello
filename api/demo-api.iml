@@ -2,11 +2,12 @@
 <module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Osmorc" name="OSGi">
-      <configuration manifestGenerationMode="Manually" manifestLocation="" jarfileLocation="demo-api-0.1.0-SNAPSHOT.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="com.catt.carbon.demo-api" bundleVersion="0.1.0.SNAPSHOT" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
+      <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="demo-api-0.1.0-SNAPSHOT.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="com.catt.carbon.demo-api" bundleVersion="0.1.0.SNAPSHOT" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
         <additionalProperties>
           <property key="Bundle-Description" value="OpenDaylight is leading the transformation to Open Software Defined Networking (SDN). For more information, please see https://www.opendaylight.org" />
           <property key="Bundle-Vendor" value="OpenDaylight" />
           <property key="Bundle-DocURL" value="https://www.opendaylight.org" />
+          <property key="Export-Package" value="org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.demo.rev150105" />
           <property key="Include-Resource" value="META-INF/services/org.opendaylight.yangtools.yang.binding.YangModelBindingProvider=$MODULE_DIR$/target/generated-sources/spi/META-INF/services/org.opendaylight.yangtools.yang.binding.YangModelBindingProvider,META-INF/yang/demo.yang=$MODULE_DIR$/target/generated-sources/yang/META-INF/yang/demo.yang,$MODULE_DIR$/target/classes/LICENSE,META-INF/git.properties=-target/classes/META-INF/git.properties" />
           <property key="Bundle-Name" value="ODL :: com.catt.carbon :: demo-api" />
         </additionalProperties>
@@ -39,6 +40,5 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.code.findbugs:annotations:3.0.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.code.findbugs:jsr305:3.0.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.eclipse.jdt:org.eclipse.jdt.annotation:2.0.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.osgi:org.osgi.core:5.0.0" level="project" />
   </component>
 </module>
