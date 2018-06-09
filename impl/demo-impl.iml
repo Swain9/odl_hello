@@ -8,7 +8,7 @@
           <property key="Bundle-Vendor" value="OpenDaylight" />
           <property key="Bundle-DocURL" value="https://www.opendaylight.org" />
           <property key="Import-Package" value="*" />
-          <property key="Include-Resource" value="org/opendaylight/blueprint/impl-blueprint.xml=$MODULE_DIR$/src/main/resources/org/opendaylight/blueprint/impl-blueprint.xml,$MODULE_DIR$/target/classes/LICENSE,META-INF/git.properties=-target/classes/META-INF/git.properties" />
+          <property key="Include-Resource" value="org/opendaylight/blueprint/impl-blueprint.xml=$MODULE_DIR$/src/main/resources/org/opendaylight/blueprint/impl-blueprint.xml,-target/classes/LICENSE,META-INF/git.properties=-target/classes/META-INF/git.properties" />
           <property key="Bundle-Name" value="ODL :: com.catt.carbon :: demo-impl" />
         </additionalProperties>
         <additionalJARContents />

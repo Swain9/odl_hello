@@ -65,6 +65,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
               <!--org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.demo.rev150105-->
               *
             </Import-Package>
+            <Include-Resource>{maven-resources},-target/classes/LICENSE,META-INF/git.properties=-target/classes/META-INF/git.properties</Include-Resource>
             <!--<Bundle-Activator>
 
             </Bundle-Activator>-->
