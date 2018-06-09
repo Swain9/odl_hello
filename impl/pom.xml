@@ -46,6 +46,18 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
       <artifactId>mockito-core</artifactId>
       <scope>test</scope>
     </dependency>
+    <!--Maven dependency is not OSGi-ready-->
+    <!--<dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.47</version>
+    </dependency>-->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.16.22</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
   <build>

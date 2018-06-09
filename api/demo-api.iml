@@ -7,8 +7,8 @@
           <property key="Bundle-Description" value="OpenDaylight is leading the transformation to Open Software Defined Networking (SDN). For more information, please see https://www.opendaylight.org" />
           <property key="Bundle-Vendor" value="OpenDaylight" />
           <property key="Bundle-DocURL" value="https://www.opendaylight.org" />
-          <property key="Export-Package" value="org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.demo.rev150105" />
-          <property key="Include-Resource" value="META-INF/services/org.opendaylight.yangtools.yang.binding.YangModelBindingProvider=$MODULE_DIR$/target/generated-sources/spi/META-INF/services/org.opendaylight.yangtools.yang.binding.YangModelBindingProvider,META-INF/yang/demo.yang=$MODULE_DIR$/target/generated-sources/yang/META-INF/yang/demo.yang,-target/classes/LICENSE,META-INF/git.properties=-target/classes/META-INF/git.properties" />
+          <property key="Export-Package" value="org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.*" />
+          <property key="Include-Resource" value="META-INF/services/org.opendaylight.yangtools.yang.binding.YangModelBindingProvider=$MODULE_DIR$/target/generated-sources/spi/META-INF/services/org.opendaylight.yangtools.yang.binding.YangModelBindingProvider,META-INF/yang/demo.yang=$MODULE_DIR$/target/generated-sources/yang/META-INF/yang/demo.yang,META-INF/yang/user.yang=$MODULE_DIR$/target/generated-sources/yang/META-INF/yang/user.yang,-target/classes/LICENSE,META-INF/git.properties=-target/classes/META-INF/git.properties" />
           <property key="Bundle-Name" value="ODL :: com.catt.carbon :: demo-api" />
         </additionalProperties>
         <additionalJARContents />

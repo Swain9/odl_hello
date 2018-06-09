@@ -1,0 +1,43 @@
+module user {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:user";
+    prefix "user";
+
+    revision "2015-01-05" {
+        description "Initial revision of user model";
+    }
+
+    rpc get-all-user-by-dept-id {
+        input {
+            leaf dept-id {
+                type int32;
+                description "部门id";
+            }
+        }
+        output {
+            list user-list {
+                uses output-user;
+                description "用户信息";
+            }
+        }
+    }
+
+    grouping output-user {
+        leaf id {
+            type int32;
+            description "用户id";
+        }
+        leaf user-name {
+            type string;
+            description "用户名";
+        }
+        leaf user-age {
+            type int32;
+            description "用户年龄";
+        }
+        leaf user-address {
+            type string;
+            description "用户地址";
+        }
+    }
+}

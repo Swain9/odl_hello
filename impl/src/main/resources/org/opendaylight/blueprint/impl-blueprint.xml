@@ -23,5 +23,14 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
 
   <!--不加这一句就不会启动项目-->
   <odl:rpc-implementation ref="provider"/>
+  <!--配置UserDaoImpl-->
+  <bean id="userDao" class="com.catt.carbon.dao.impl.UserDaoImpl" scope="singleton" init-method="init" />
+  <!--配置UserProvider-->
+  <bean id="userPro" class="com.catt.carbon.impl.UserProvider" init-method="init" destroy-method="close">
+    <!--传入UserDaoImpl的实例-->
+    <argument ref="userDao" />
+  </bean>
+  <!--履行userProvider-->
+  <odl:rpc-implementation ref="userPro"/>
 
 </blueprint>
