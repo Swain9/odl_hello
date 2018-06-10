@@ -52,6 +52,11 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
       <artifactId>fastjson</artifactId>
       <version>1.2.47</version>
     </dependency>-->
+    <!--
+    This inspection reports any Maven dependency inside an OSGi project which points to a library which can not be run inside an OSGi container.
+    Osmorc will try and bundlify these libraries,
+    however using a library that natively supports OSGi will generally provide a better result and is therefore the preferred choice.
+    -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>

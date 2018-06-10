@@ -14,5 +14,7 @@ xcopy /y /c /h /r %cd%\impl\target\demo-impl-0.1.0-SNAPSHOT.jar  %cd%\karaf\targ
 
 ::xcopy /y /c /h /r %cd%\lib\deploy\*.*  %cd%\karaf\target\assembly\deploy\
 
+::如果在yang文件中，定义的不同的结构和类型，需要重新编译整个项目？否则启动karaf的时候会出现包缺少的异常
+
 ::debug
 %cd%\karaf\target\assembly\bin\karaf.bat debug
