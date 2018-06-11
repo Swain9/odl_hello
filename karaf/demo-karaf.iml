@@ -372,6 +372,7 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.opendaylight.dluxapps:yangui-bundle:0.5.2-Carbon" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.opendaylight.dluxapps:yangutils-bundle:0.5.2-Carbon" level="project" />
     <orderEntry type="module" module-name="demo-impl" scope="RUNTIME" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: com.alibaba:fastjson:1.2.47" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.opendaylight.controller:config-api:0.6.2-Carbon" level="project" />
     <orderEntry type="module" module-name="demo-api" scope="RUNTIME" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.opendaylight.mdsal:yang-binding:0.10.2-Carbon" level="project" />

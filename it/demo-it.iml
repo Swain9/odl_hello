@@ -299,6 +299,7 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.opendaylight.dluxapps:yangui-bundle:0.5.2-Carbon" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.opendaylight.dluxapps:yangutils-bundle:0.5.2-Carbon" level="project" />
     <orderEntry type="module" module-name="demo-impl" />
+    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.47" level="project" />
     <orderEntry type="module" module-name="demo-api" />
     <orderEntry type="module" module-name="demo-cli" />
     <orderEntry type="library" name="Maven: org.apache.karaf.shell:org.apache.karaf.shell.console:3.0.8" level="project" />

@@ -1,5 +1,6 @@
 package com.catt.carbon.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.catt.carbon.dao.UserDao;
 import com.catt.carbon.model.User;
 import com.google.common.util.concurrent.Futures;
@@ -58,6 +59,10 @@ public class UserProvider implements UserService {
         Integer deptId = input.getDeptId();
         //取出数据
         List<User> list = userDao.getAllUserByDeptId(deptId);
+
+        String listStr = JSON.toJSONString(list);
+        LOG.info(listStr);
+
         //将数据传递给List<UserList>
         List<UserList> outputList = new ArrayList<>();
         //遍历取出的数据

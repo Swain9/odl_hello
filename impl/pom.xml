@@ -47,11 +47,11 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
       <scope>test</scope>
     </dependency>
     <!--Maven dependency is not OSGi-ready-->
-    <!--<dependency>
+    <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>
       <version>1.2.47</version>
-    </dependency>-->
+    </dependency>
     <!--
     This inspection reports any Maven dependency inside an OSGi project which points to a library which can not be run inside an OSGi container.
     Osmorc will try and bundlify these libraries,
@@ -80,15 +80,48 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
             </Export-Package>-->
             <Import-Package>
               <!--org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.demo.rev150105-->
-              *
+              <!--添加resolution:=optional的原因是，如果导入第三方jar包，打包的时候-->
+              <!--会把所有的引用都写入manifest.mf文件中，会导致传递依赖的问题-->
+              <!--这里有两种解决方法，第一种就是这么写-->
+              <!--还有一种就是手动取消掉依赖的导入，但是这样会很复杂-->
+              *;resolution:=optional
             </Import-Package>
             <Include-Resource>{maven-resources},-target/classes/LICENSE,META-INF/git.properties=-target/classes/META-INF/git.properties</Include-Resource>
             <!--<Bundle-Activator>
 
             </Bundle-Activator>-->
+            <!--导入第三方依赖，依赖范围为compile，直接内联引用-->
+            <Embed-Dependency>fastjson;scope=compile;inline = true</Embed-Dependency>
+            <!--指定第三方jar打包的位置，内联引用下，该参数无效-->
+            <Embed-Directory>target/dependency</Embed-Directory>
+            <!--依赖传递检查-->
+            <Embed-Transitive>true</Embed-Transitive>
+            <Embed-StripGroup>true</Embed-StripGroup>
           </instructions>
         </configuration>
       </plugin>
+
+      <!--https://stackoverflow.com/questions/46839574/opendaylight-how-to-include-a-library-jar-file-->
+      <!--将第三方jar包打入进来，因为osgi项目使用第三方jar包，需要jar包中manifest.mf定义好Import和Export-->
+      <!--<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <appendAssemblyId>false</appendAssemblyId>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>-->
     </plugins>
   </build>
 </project>
