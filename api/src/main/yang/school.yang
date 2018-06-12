@@ -1,0 +1,28 @@
+module school {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:school";
+    prefix "school";
+
+    revision "2015-01-05" {
+        description "Initial revision of user model";
+    }
+
+    grouping school-user-list-grouping {
+        container school-user-list {
+            list user-list {
+                leaf parent-id {
+                    type int32;
+                    description "用户id";
+                }
+            }
+        }
+    }
+
+    // USES is not valid for RPC.忘记写output了
+    rpc getAllSchoolUserList {
+        output {
+            uses school-user-list-grouping;
+        }
+    }
+
+}

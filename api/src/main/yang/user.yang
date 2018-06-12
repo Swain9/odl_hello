@@ -6,6 +6,7 @@ module user {
     revision "2015-01-05" {
         description "Initial revision of user model";
     }
+    import school { prefix sch; }
 
     rpc get-all-user-by-dept-id {
         input {
@@ -21,6 +22,20 @@ module user {
             }
         }
     }
+
+    //扩展get-all-user-by-dept-id节点下的output节点的user-list节点，添加一个字段user-teacher
+    augment /get-all-user-by-dept-id/output/user-list/ {
+            leaf user-teacher {
+                type string;
+                description "老师";
+            }
+        }
+
+    /*
+    augment sch:school-user-list/sch:user-list {
+        uses output-user;
+    }
+    */
 
     grouping output-user {
         leaf id {
@@ -40,4 +55,5 @@ module user {
             description "用户地址";
         }
     }
+
 }

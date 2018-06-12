@@ -4,10 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.catt.carbon.dao.UserDao;
 import com.catt.carbon.model.User;
 import com.google.common.util.concurrent.Futures;
-import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.user.rev150105.GetAllUserByDeptIdInput;
-import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.user.rev150105.GetAllUserByDeptIdOutput;
-import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.user.rev150105.GetAllUserByDeptIdOutputBuilder;
-import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.user.rev150105.UserService;
+import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.user.rev150105.*;
 import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.user.rev150105.get.all.user.by.dept.id.output.UserList;
 import org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.user.rev150105.get.all.user.by.dept.id.output.UserListBuilder;
 import org.opendaylight.yangtools.yang.common.RpcResult;
@@ -74,6 +71,11 @@ public class UserProvider implements UserService {
             builder.setUserName(user.getUserName());
             builder.setUserAge(user.getUserAge());
             builder.setUserAddress(user.getUserAddress());
+
+            UserList1Builder builder1 = new UserList1Builder();
+            builder1.setUserTeacher("测试");
+            //todo 关键之处，使用augment扩展节点的时候，需要在这里将扩展的节点添加进去。
+            builder.addAugmentation(UserList1.class, builder1.build());
             //调用build()方法，生成UserList对象
             UserList userList = builder.build();
             //将UserList对象存入List<UserList>中
