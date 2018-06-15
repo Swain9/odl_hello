@@ -1,0 +1,50 @@
+module order {
+    yang-version 1;
+    namespace "urn:com:maolin:order";
+    prefix order;
+
+    revision "2015-01-05" {
+        description "Initial revision of order model
+        https://bbs.iherb.com/thread-8950-1-1.html";
+    }
+
+    identity order-type {
+        description "订单状态";
+    }
+
+    identity order-pending {
+        base order-type;
+        description "订单状态-待处理";
+    }
+
+    identity order-waiting-for-payment {
+        base order-type;
+        description "订单状态-待付款";
+    }
+
+    identity order-processing-payment {
+        base order-type;
+        description "订单状态-已付款";
+    }
+
+    identity order-processing {
+        base order-type;
+        description "订单状态-处理中";
+    }
+
+    grouping order-grouping {
+        container order {
+            leaf order-id {
+                type string;
+                description "订单id";
+            }
+            leaf order-type {
+                type identityref {
+                    base order-type;
+                }
+                description "订单状态";
+            }
+        }
+    }
+
+}

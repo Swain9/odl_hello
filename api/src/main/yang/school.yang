@@ -3,8 +3,11 @@ module school {
     namespace "urn:opendaylight:params:xml:ns:yang:school";
     prefix "school";
 
+    //revision-date 2013-07-15;
+    import ietf-inet-types { prefix inet; }
+
     revision "2015-01-05" {
-        description "Initial revision of user model";
+        description "Initial revision of school model";
     }
 
     grouping school-user-list-grouping {
@@ -14,6 +17,10 @@ module school {
                     type int32;
                     description "用户id";
                 }
+            }
+            leaf school-ip {
+                type inet:ipv4-address;
+                description "ip 4 地址";
             }
         }
     }

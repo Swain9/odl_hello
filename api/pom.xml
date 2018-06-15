@@ -25,6 +25,15 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
        build failure. Please do not modify this unless you have a good reason. -->
   <name>ODL :: com.catt.carbon :: ${project.artifactId}</name>
   <packaging>bundle</packaging>
+  <!--不要复制出来，该文件会出现冲突-->
+  <!--解决方式有3个，一个是使用官方提供的包，二是更改命名空间，三是在impl加上optional-->
+  <dependencies>
+    <dependency>
+      <groupId>org.opendaylight.mdsal.model</groupId>
+      <artifactId>ietf-inet-types-2013-07-15</artifactId>
+      <version>1.2.2-Carbon</version>
+    </dependency>
+  </dependencies>
 
   <build>
     <plugins>
@@ -39,7 +48,8 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
            <!-- <Bundle-Version>${project.version}</Bundle-Version>-->
             <Export-Package>
               <!--org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.demo.rev150105-->
-              org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.*
+              org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.*,
+              org.opendaylight.yang.gen.v1.urn.com.maolin.*
             </Export-Package>
             <Include-Resource>{maven-resources},-target/classes/LICENSE,META-INF/git.properties=-target/classes/META-INF/git.properties</Include-Resource>
             <!--  <Import-Package>

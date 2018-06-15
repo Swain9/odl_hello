@@ -33,4 +33,16 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
   <!--履行userProvider-->
   <odl:rpc-implementation ref="userPro"/>
 
+  <!--配置UserProvider-->
+  <bean id="schoolPro" class="com.catt.carbon.impl.SchoolProvider" init-method="init" destroy-method="close">
+    <!--传入UserDaoImpl的实例-->
+    <argument ref="userDao" />
+  </bean>
+  <!--履行userProvider-->
+  <odl:rpc-implementation ref="schoolPro"/>
+
+  <bean id="orderManagerPro" class="com.catt.carbon.impl.OrderManagerProvider">
+
+  </bean>
+  <odl:rpc-implementation ref="orderManagerPro"/>
 </blueprint>

@@ -7,8 +7,8 @@
           <property key="Bundle-Description" value="OpenDaylight is leading the transformation to Open Software Defined Networking (SDN). For more information, please see https://www.opendaylight.org" />
           <property key="Bundle-Vendor" value="OpenDaylight" />
           <property key="Bundle-DocURL" value="https://www.opendaylight.org" />
-          <property key="Export-Package" value="org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.*" />
-          <property key="Include-Resource" value="META-INF/services/org.opendaylight.yangtools.yang.binding.YangModelBindingProvider=$MODULE_DIR$/target/generated-sources/spi/META-INF/services/org.opendaylight.yangtools.yang.binding.YangModelBindingProvider,META-INF/yang/demo.yang=$MODULE_DIR$/target/generated-sources/yang/META-INF/yang/demo.yang,META-INF/yang/user.yang=$MODULE_DIR$/target/generated-sources/yang/META-INF/yang/user.yang,-target/classes/LICENSE,META-INF/git.properties=-target/classes/META-INF/git.properties" />
+          <property key="Export-Package" value="org.opendaylight.yang.gen.v1.urn.opendaylight.params.xml.ns.yang.*,org.opendaylight.yang.gen.v1.urn.com.maolin.*" />
+          <property key="Include-Resource" value="META-INF/services/org.opendaylight.yangtools.yang.binding.YangModelBindingProvider=$MODULE_DIR$/target/generated-sources/spi/META-INF/services/org.opendaylight.yangtools.yang.binding.YangModelBindingProvider,META-INF/yang/demo.yang=$MODULE_DIR$/target/generated-sources/yang/META-INF/yang/demo.yang,META-INF/yang/order-manager.yang=$MODULE_DIR$/target/generated-sources/yang/META-INF/yang/order-manager.yang,META-INF/yang/order.yang=$MODULE_DIR$/target/generated-sources/yang/META-INF/yang/order.yang,META-INF/yang/school.yang=$MODULE_DIR$/target/generated-sources/yang/META-INF/yang/school.yang,META-INF/yang/user.yang=$MODULE_DIR$/target/generated-sources/yang/META-INF/yang/user.yang,-target/classes/LICENSE,META-INF/git.properties=-target/classes/META-INF/git.properties" />
           <property key="Bundle-Name" value="ODL :: com.catt.carbon :: demo-api" />
         </additionalProperties>
         <additionalJARContents />
@@ -22,10 +22,13 @@
       <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/mdsal-binding" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/spi" isTestSource="false" generated="true" />
       <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/yang" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.opendaylight.mdsal.model:ietf-inet-types-2013-07-15:1.2.2-Carbon" level="project" />
+    <orderEntry type="library" name="Maven: org.opendaylight.mdsal.model:ietf-type-util:1.1.2-Carbon" level="project" />
     <orderEntry type="library" name="Maven: org.opendaylight.mdsal:yang-binding:0.10.2-Carbon" level="project" />
     <orderEntry type="library" name="Maven: org.opendaylight.yangtools:concepts:1.1.2-Carbon" level="project" />
     <orderEntry type="library" name="Maven: org.opendaylight.yangtools:util:1.1.2-Carbon" level="project" />

@@ -65,7 +65,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
     </dependency>
   </dependencies>
 
-  <build>
+ <build>
     <plugins>
       <plugin>
         <groupId>org.apache.felix</groupId>
@@ -86,7 +86,9 @@ and is available at http://www.eclipse.org/legal/epl-v10.html
               <!--还有一种就是手动取消掉依赖的导入，但是这样会很复杂-->
               *;resolution:=optional
             </Import-Package>
-            <Include-Resource>{maven-resources},-target/classes/LICENSE,META-INF/git.properties=-target/classes/META-INF/git.properties</Include-Resource>
+            <Include-Resource>
+              {maven-resources},-target/classes/LICENSE,META-INF/git.properties=-target/classes/META-INF/git.properties
+            </Include-Resource>
             <!--<Bundle-Activator>
 
             </Bundle-Activator>-->

@@ -83,7 +83,7 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.opendaylight.mdsal.model:ietf-topology-ospf:2013.10.21.10.2-Carbon" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.opendaylight.mdsal.model:ietf-topology-l3-unicast-igp:2013.10.21.10.2-Carbon" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.opendaylight.mdsal.model:ietf-network-2015-06-08:1.2.2-Carbon" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.opendaylight.mdsal.model:ietf-inet-types-2013-07-15:1.2.2-Carbon" level="project" />
+    <orderEntry type="library" name="Maven: org.opendaylight.mdsal.model:ietf-inet-types-2013-07-15:1.2.2-Carbon" level="project" />
     <orderEntry type="library" name="Maven: org.opendaylight.mdsal.model:ietf-type-util:1.1.2-Carbon" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.opendaylight.mdsal.model:ietf-packet-fields:0.8.2-Carbon" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.opendaylight.mdsal.model:ietf-access-control-list:0.8.2-Carbon" level="project" />
